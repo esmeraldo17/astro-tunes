@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <div>
         { carregando === true && <Carregando /> }
-        <h1 data-testid="header-component">Ola</h1>
+        <h1 data-testid="header-component">Astro Tunes</h1>
         <p data-testid="header-user-name">{ userName }</p>
         <Link to="/search" data-testid="link-to-search"> Pesquisa </Link>
         <Link to="/favorites" data-testid="link-to-favorites"> Favoritos </Link>
