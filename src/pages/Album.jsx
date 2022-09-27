@@ -83,7 +83,7 @@ class Album extends Component {
                     await this.addFavorite(e);
                     await this.pegaFavorito();
                   } }
-                  defaultChecked={ favorito.length > 0 && (
+                  checked={ favorito.length > 0 && (
                     favorito.some((e2) => e2.trackName === e.trackName)
                   ) }
                 />
