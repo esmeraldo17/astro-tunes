@@ -48,6 +48,30 @@ class Album extends Component {
     );
   };
 
+  // removeFavorite = async (musica) => {
+  //   const {
+  //     target: { checked },
+  //   } = musica;
+  //   this.setState({ carregando: true });
+  //   // console.log(carregando);
+  //   await removeSong(musica);
+  //   this.setState({ carregando: false });
+  // };
+
+  // favorite = async (e) => {
+  //   const {
+  //     target: { checked },
+  //   } = e;
+
+  //   console.log(checked);
+
+  //   if (checked) {
+  //     await this.addFavorite(e);
+  //   } else {
+  //     await this.removeFavorite(e);
+  //   }
+  // };
+
   pegaFavorito = async () => {
     const favoritos = await getFavoriteSongs();
     this.setState({ favorito: favoritos });
@@ -57,7 +81,7 @@ class Album extends Component {
 
   render() {
     const { name, collection, musicState, carregando, favorito } = this.state;
-    console.log(favorito);
+    // console.log(favorito);
     return (
       <div data-testid="page-album">
         <Header />
@@ -76,11 +100,12 @@ class Album extends Component {
               <label htmlFor={ i }>
                 Favorita
                 <input
-                  name={ i }
+                  id={ i }
                   type="checkbox"
                   data-testid={ `checkbox-music-${e.trackId}` }
                   onClick={ async () => {
                     await this.addFavorite(e);
+                    // this.favorite(e);
                     await this.pegaFavorito();
                   } }
                   checked={ favorito.length > 0 && (
